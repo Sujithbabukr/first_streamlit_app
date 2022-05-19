@@ -10,7 +10,8 @@ streamlit.text('Kale, Spinach & Rocket Smoothie')
 streamlit.text('Hard-Boiled Free-Range Egg')
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 #create multivalue picklist
-streamlit.multiselect("Pick Some Fruits:",list(my_fruit_list.index),['Apple','Orange'])
+fruits_to_selected =streamlit.multiselect("Pick Some Fruits:",list(my_fruit_list.index),['Apple','Orange'])
+fruits_to_show = my_fruit_list.loc[fruits_to_selected]
 # display Dataframe
-streamlit.dataframe(my_fruit_list)
+streamlit.dataframe(fruits_to_show)
 
